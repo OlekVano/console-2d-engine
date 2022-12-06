@@ -7,7 +7,7 @@ class StaticEntity(Entity):
         sprite = utils.sprites_from_txt(path, width, height, 1)[0]
         return StaticEntity(sprite, width, height, 0, 0)
 
-    def draw(self, canvas):
+    def draw(self, frame):
         for i in range(self.height):
             for j in range(self.width):
-                canvas[self.pos_y + i][self.pos_x + j] = self.sprite[i][j]
+                frame[self.pos_y + i][self.pos_x + j] = self.sprite[i][j]
