@@ -5,3 +5,10 @@ class Entity:
         self.height = height
         self.pos_x = pos_x
         self.pos_y = pos_y
+    
+    def update_function(self):
+        pass
+
+    def update(self):
+        self.animation.update()
+        self.update_function()
