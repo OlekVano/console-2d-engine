@@ -17,12 +17,16 @@ class Animation:
         if self.static: return
 
         current_time = time.time()
-        self.time_elapsed += self.last_update - current_time
+
+        self.time_elapsed += current_time - self.last_update
         self.last_update = current_time
+
         if self.time_elapsed > self.duration:
             self.time_elapsed -= self.duration
     
     def frame(self):
         if self.static: return self.sprites[0]
 
-        return self.sprites[self.duration * self.n_sprites // self.time_elapsed]
+        n_sprite = int(self.time_elapsed * self.n_sprites / self.duration)
+
+        return self.sprites[n_sprite]
