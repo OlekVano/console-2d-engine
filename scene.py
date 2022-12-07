@@ -13,3 +13,7 @@ class Scene:
             entity.draw(frame)
 
         return frame
+
+    def update(self):
+        for entity in self.entities:
+            entity.update()
