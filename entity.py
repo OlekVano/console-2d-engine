@@ -11,4 +11,4 @@ class Entity:
 
     def update(self):
         self.animation.update()
-        self.update_function()
+        self.update_function(self)
