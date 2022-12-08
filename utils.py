@@ -1,4 +1,4 @@
-def sprites_from_txt(path, width, height, n_frames):
+def sprites_from_txt(path, width, height):
     with open(path, 'r') as f:
         lines = f.readlines()
         sprites = []
@@ -7,14 +7,18 @@ def sprites_from_txt(path, width, height, n_frames):
         sprite = []
         
         for i in range(len(lines)):
-            if sprite_row == height:
+            if sprite_row == -1:
                 sprite_row = 0
+                continue
+
+            line = lines[i]
+            sprite.append([x for x in line[:width]])
+            sprite_row += 1
+
+            if sprite_row == height:
+                sprite_row = -1
                 sprites.append(sprite)
                 sprite = []
-            else:
-                line = lines[i]
-                sprite.append([x for x in line[:width]])
-                sprite_row += 1
 
         return sprites
 
