@@ -51,6 +51,21 @@ def sprites_from_txt(path, width, height):
         return sprites
 
 def create_frame(width, height):
+    
+    #width validation
+    t = type(width)
+    if t != int:
+        raise TypeError(f'create_frame: width must be of type \'int\', not \'{t}\'')
+    if width <= 0:
+        raise ValueError('create_frame: width must be a positive number')
+    
+    #height validation
+    t = type(height) 
+    if t != int:
+        raise TypeError(f'create_frame: height must be of type \'int\', not \'{t}\'')
+    if height <= 0:
+        raise ValueError('create_frame: height must be a positive number')
+
     return [[' ' for i in range(width)] for _ in range(height)]
 
 def output_frame(frame):
