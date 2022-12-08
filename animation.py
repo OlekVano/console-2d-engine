@@ -1,7 +1,5 @@
 import time
 
-time.time()
-
 class Animation:
     def __init__(self, width, height, sprites, duration):
         self.width = width
