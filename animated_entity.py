@@ -10,7 +10,10 @@ class AnimatedEntity(Entity):
         return AnimatedEntity(animation, width, height, 0, 0)
 
     def draw(self, frame):
+        sprite = self.animation.frame()
         for i in range(self.height):
             for j in range(self.width):
-                sprite = self.animation.frame()
-                frame[self.pos_y + i][self.pos_x + j] = sprite[i][j]
+                try:
+                    frame[self.pos_y + i][self.pos_x + j] = sprite[i][j]
+                except:
+                    pass
