@@ -22,7 +22,7 @@ class Animation:
         if self.time_elapsed > self.duration:
             self.time_elapsed -= self.duration
     
-    def frame(self):
+    def render(self):
         if self.static: return self.sprites[0]
 
         n_sprite = int(self.time_elapsed * self.n_sprites / self.duration)

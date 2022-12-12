@@ -1,6 +1,6 @@
 class Entity:
-    def __init__(self, animation, width, height, pos_x, pos_y):
-        self.animation = animation
+    def __init__(self, renderer, width, height, pos_x, pos_y):
+        self.renderer = renderer
         self.width = width
         self.height = height
         self.pos_x = pos_x
@@ -10,11 +10,11 @@ class Entity:
         pass
 
     def update(self):
-        self.animation.update()
+        self.renderer.update()
         self.update_function(self)
 
     def draw(self, frame):
-        sprite = self.animation.frame()
+        sprite = self.renderer.render()
         for y in range(self.height):
             for x in range(self.width):
                 frame_pos_y = self.pos_y + y
