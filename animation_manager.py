@@ -11,7 +11,7 @@ class AnimationManager:
     def set_default(self, name):
         self.default = name
     
-    def playOnce(self, name):
+    def play_once(self, name):
         self.current = name
         self.loop = False
     
