@@ -15,6 +15,6 @@ class AnimationManager:
         self.current = name
         self.loop = False
     
-    def play(self, name):
+    def play_looped(self, name):
         self.current = name
         self.loop = True
